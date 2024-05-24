@@ -1,0 +1,24 @@
+{
+    "environment": {
+        "name": "Local",
+        "production": false
+    },
+    "appInsights": {
+        "instrumentationKey": ""
+    },
+    "logging": {
+        "console": true,
+        "appInsights": false
+    },
+    "api": {
+        "url": "https://ss.azurewebsites.net"
+    },
+    "app": {
+        "title": "ProcessFlow"
+    },
+    "buildInfo": {
+        "number": "1.0.0.0",
+        "createdOn": "Friday, May 24, 2024 5:53:28 AM"
+    },
+    "environments": []
+}
