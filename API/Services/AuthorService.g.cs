@@ -63,14 +63,16 @@ namespace ProcessFlow.Services
     public class AuthorService : IAuthorService
     {
         private ProcessFlowContext _dbContext;
+        private ICounterService _counterservice;
 
         /// <summary>
         /// Initializes a new instance of the Author class.
         /// </summary>
         /// <param name="dbContext">dbContext value to set.</param>
-        public AuthorService(ProcessFlowContext dbContext)
+        public AuthorService(ProcessFlowContext dbContext, ICounterService counterservice)
         {
             _dbContext = dbContext;
+            _counterservice = counterservice;
         }
 
         /// <summary>Retrieves a specific author by its primary key</summary>
@@ -139,8 +141,18 @@ namespace ProcessFlow.Services
         /// <returns>The result of the operation</returns>
         public Guid Create(Author model)
         {
-            _dbContext.Author.Add(model);
-            _dbContext.SaveChanges();
+            List<Author> author = Get(model.Name);
+            if (author.Count == 0)
+            {
+                 model.Code = _counterservice.GetCounter();
+                _dbContext.Author.Add(model);
+                _dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Duplicate author Name");
+            }
+
             return model.Id;
         }
 

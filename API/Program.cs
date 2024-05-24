@@ -81,6 +81,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     };
 });
 //Service inject
+builder.Services.AddScoped<ICounterService, CounterService>();
 builder.Services.AddScoped<IBooksService, BooksService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IRoleService, RoleService>();

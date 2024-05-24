@@ -1,6 +1,5 @@
 cells:
   - type: app.OtherConditionShape
-    title: "Trigger"
     columns: []
     padding:
       top: 40
@@ -18,13 +17,13 @@ cells:
       x: 50
       y: 25
     angle: 0
+    title: Trigger
     id: 279a764b-d624-4699-816f-b28fae07698c
     z: 1
     attrs:
       headerLabel:
         text: Start
   - type: app.OtherConditionShape
-    title: Create
     columns: []
     padding:
       top: 40
@@ -39,23 +38,24 @@ cells:
     itemOffset: 0
     itemOverflow: true
     position:
-      x: 50
-      y: 230
+      x: 63
+      y: 1158
     angle: 0
+    title: Create
     id: 86219b1a-10de-46de-b910-8b00d73db871
     z: 2
     attrs:
       headerLabel:
         text: Create author
   - type: standard.Circle
-    title: "Circle"
     position:
-      x: 168
-      y: 310
+      x: 183
+      y: 1370
     size:
       width: 15
       height: 15
     angle: 0
+    title: Circle
     id: 8513df80-2d5c-4931-aa1c-783def30be73
     z: 3
     attrs:
@@ -75,21 +75,580 @@ cells:
         fillOpacity: 0.5
   - type: standard.Link
     source:
-      id: 279a764b-d624-4699-816f-b28fae07698c
-    target:
-      id: 86219b1a-10de-46de-b910-8b00d73db871
-    id: 724010fb-24c6-428b-b6ca-de9ece7c1cdf
-    z: 3
-    attrs:
-      line:
-        stroke: "#A0A0A0"
-  - type: standard.Link
-    source:
       id: 86219b1a-10de-46de-b910-8b00d73db871
     target:
       id: 8513df80-2d5c-4931-aa1c-783def30be73
     id: 9d19887f-f70f-4069-9f16-57c351fca05f
     z: 5
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: app.OtherProcessShape
+    title: OtherProcessShape
+    columns: []
+    padding:
+      top: 40
+      bottom: 10
+      left: 10
+      right: 10
+    size:
+      width: 250
+      height: 1
+    itemMinLabelWidth: 80
+    itemHeight: 25
+    itemOffset: 0
+    itemOverflow: true
+    position:
+      x: 55
+      y: 109
+    angle: 0
+    id: 341c2dab-ba81-45d4-8ed1-78587e8914a6
+    z: 6
+    markup:
+      - tagName: rect
+        selector: body
+      - tagName: rect
+        selector: header
+      - tagName: g
+        selector: tabColor
+        children:
+          - tagName: g
+            selector: headerIcon_bg
+            children:
+              - tagName: rect
+                selector: headerIconBg
+              - tagName: image
+                selector: iconsGroup_1
+          - tagName: text
+            selector: headerLabel
+          - tagName: image
+            selector: option
+      - tagName: foreignObject
+        selector: inputTextarea
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            textContent: Entity
+            selector: textareaLabel
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: select
+            selector: dropdownInput
+      - tagName: foreignObject
+        selector: inputAction
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            textContent: Action
+            selector: actionLabel
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: select
+            selector: dropdownAction
+      - tagName: foreignObject
+        selector: inputParams_0
+        attributes:
+          width: 236
+          height: 55
+          x: 13
+          y: 162
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            className: truncate-text w-100 topic-list-label
+            textContent: Filters
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: string
+            className: topic-list common-input
+            selector: filters
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: filters-clear
+      - tagName: foreignObject
+        selector: inputParams_1
+        attributes:
+          width: 236
+          height: 55
+          x: 13
+          y: 217
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            className: truncate-text w-100 topic-list-label
+            textContent: Search term
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: string
+            className: topic-list common-input
+            selector: searchTerm
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: searchTerm-clear
+      - tagName: foreignObject
+        selector: inputParams_2
+        attributes:
+          width: 236
+          height: 55
+          x: 13
+          y: 272
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            className: truncate-text w-100 topic-list-label
+            textContent: Page number
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: int
+            className: topic-list common-input
+            selector: pageNumber
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: pageNumber-clear
+      - tagName: foreignObject
+        selector: inputParams_3
+        attributes:
+          width: 236
+          height: 55
+          x: 13
+          y: 327
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            className: truncate-text w-100 topic-list-label
+            textContent: Page size
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: int
+            className: topic-list common-input
+            selector: pageSize
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: pageSize-clear
+      - tagName: foreignObject
+        selector: inputParams_4
+        attributes:
+          width: 236
+          height: 55
+          x: 13
+          y: 382
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            className: truncate-text w-100 topic-list-label
+            textContent: Sort field
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: string
+            className: topic-list common-input
+            selector: sortField
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: sortField-clear
+      - tagName: foreignObject
+        selector: inputParams_5
+        attributes:
+          width: 236
+          height: 55
+          x: 13
+          y: 437
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            className: truncate-text w-100 topic-list-label
+            textContent: Sort order
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: string
+            className: topic-list common-input
+            selector: sortOrder
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: sortOrder-clear
+      - tagName: foreignObject
+        selector: outputParams
+        attributes:
+          width: 236
+          height: 76
+          x: 13
+          y: 492
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            textContent: Save response as (List<Author>)
+            className: truncate-text ouput-label topic-list-label
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: List<Author>
+            className: topic-list common-input
+            selector: response
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: response-clear
+    attrs:
+      body:
+        height: 572
+      headerLabel:
+        text: Call another
+      dropdownInput:
+        html:
+          - <option value='' selected>Select</option>
+          - <option value='AuthorService'>AuthorService</option>
+          - <option value='BooksService'>BooksService</option>
+          - <option value='EntityService'>EntityService</option>
+          - <option
+            value='RoleEntitlementService'>RoleEntitlementService</option>
+          - <option value='RoleService'>RoleService</option>
+          - <option value='TenantService'>TenantService</option>
+          - <option
+            value='UserAuthenticationService'>UserAuthenticationService</option>
+          - <option value='UserInRoleService'>UserInRoleService</option>
+          - <option value='UserService'>UserService</option>
+          - <option value='CounterService'>CounterService</option>
+        value: AuthorService
+      dropdownAction:
+        value: Get
+        html:
+          - <option value='' selected>Select</option>
+          - <option value='GetById'>GetById</option>
+          - <option value='Get'>Get</option>
+          - <option value='Create'>Create</option>
+          - <option value='Update'>Update</option>
+          - <option value='Patch'>Patch</option>
+          - <option value='Delete'>Delete</option>
+      searchTerm:
+        value: model.Name
+        dataType: string
+      response:
+        value: author
+        dataType: List<Author>
+  - type: standard.Link
+    source:
+      id: 279a764b-d624-4699-816f-b28fae07698c
+    target:
+      id: 341c2dab-ba81-45d4-8ed1-78587e8914a6
+    id: 8c59b4c4-7d05-4be6-a28f-9daf80d5a2e8
+    z: 7
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: app.MainConditionShape
+    title: MainCondition
+    columns: []
+    padding:
+      top: 40
+      bottom: 10
+      left: 10
+      right: 10
+    size:
+      width: 250
+      height: 1
+    itemMinLabelWidth: 80
+    itemHeight: 25
+    itemOffset: 0
+    itemOverflow: true
+    position:
+      x: 59
+      y: 747
+    angle: 0
+    id: 8bdf7b7a-7c4d-47a6-8c72-169941b09e6a
+    z: 9
+    attrs:
+      headerLabel:
+        text: Main condition
+      variableInput:
+        value: author.Count
+      valueInput:
+        value: "0"
+      operatorInput:
+        html:
+          - <option value='' selected>Select</option>
+          - <option value='=='>==</option>
+          - <option value='!='>!=</option>
+          - <option value='>'>></option>
+          - <option value='<'><</option>
+          - <option value='>='>>=</option>
+          - <option value='<='><=</option>
+        value: ==
+  - type: app.OtherConditionShape
+    columns: []
+    padding:
+      top: 40
+      bottom: 10
+      left: 10
+      right: 10
+    size:
+      width: 250
+      height: 1
+    itemMinLabelWidth: 80
+    itemHeight: 25
+    itemOffset: 0
+    itemOverflow: true
+    position:
+      x: 608
+      y: 753
+    angle: 0
+    id: b20d4ea7-42cc-4abb-a46f-eddf1b8bb570
+    title: OtherCondition
+    z: 10
+    attrs:
+      headerLabel:
+        text: All other Condition
+  - type: standard.Link
+    source:
+      id: 341c2dab-ba81-45d4-8ed1-78587e8914a6
+    target:
+      id: 8bdf7b7a-7c4d-47a6-8c72-169941b09e6a
+    id: 50aa9010-ad91-443c-a086-7d6140bde0a5
+    z: 11
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: standard.Link
+    source:
+      id: 8bdf7b7a-7c4d-47a6-8c72-169941b09e6a
+    target:
+      id: b20d4ea7-42cc-4abb-a46f-eddf1b8bb570
+    id: 7ca4dd1f-c807-42c5-85af-a4794487e1e7
+    z: 13
+    labels:
+      - attrs:
+          text:
+            text: "False"
+            style:
+              fill: "#FF7043"
+        position:
+          distance: 30
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: app.OtherProcessShape
+    title: OtherProcessShape
+    columns: []
+    padding:
+      top: 40
+      bottom: 10
+      left: 10
+      right: 10
+    size:
+      width: 250
+      height: 1
+    itemMinLabelWidth: 80
+    itemHeight: 25
+    itemOffset: 0
+    itemOverflow: true
+    position:
+      x: 58
+      y: 886
+    angle: 0
+    id: c7f20a0f-5c99-4a2a-880f-6e4540257b0a
+    z: 15
+    markup:
+      - tagName: rect
+        selector: body
+      - tagName: rect
+        selector: header
+      - tagName: g
+        selector: tabColor
+        children:
+          - tagName: g
+            selector: headerIcon_bg
+            children:
+              - tagName: rect
+                selector: headerIconBg
+              - tagName: image
+                selector: iconsGroup_1
+          - tagName: text
+            selector: headerLabel
+          - tagName: image
+            selector: option
+      - tagName: foreignObject
+        selector: inputTextarea
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            textContent: Entity
+            selector: textareaLabel
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: select
+            selector: dropdownInput
+      - tagName: foreignObject
+        selector: inputAction
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            textContent: Action
+            selector: actionLabel
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: select
+            selector: dropdownAction
+      - tagName: foreignObject
+        selector: outputParams
+        attributes:
+          width: 236
+          height: 76
+          x: 13
+          y: 162
+        className: visible-overflow
+        children:
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: label
+            textContent: Save response as (string)
+            className: truncate-text ouput-label topic-list-label
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: span
+            textContent: "{x}"
+            className: var-pre
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: input
+            attributes:
+              datatype: string
+            className: topic-list common-input
+            selector: response
+          - namespaceURI: http://www.w3.org/1999/xhtml
+            tagName: button
+            className: btn fas fa-times clear
+            selector: response-clear
+    attrs:
+      body:
+        height: 242
+      headerLabel:
+        text: Call another
+      dropdownInput:
+        html:
+          - <option value='' selected>Select</option>
+          - <option value='AuthorService'>AuthorService</option>
+          - <option value='BooksService'>BooksService</option>
+          - <option value='EntityService'>EntityService</option>
+          - <option
+            value='RoleEntitlementService'>RoleEntitlementService</option>
+          - <option value='RoleService'>RoleService</option>
+          - <option value='TenantService'>TenantService</option>
+          - <option
+            value='UserAuthenticationService'>UserAuthenticationService</option>
+          - <option value='UserInRoleService'>UserInRoleService</option>
+          - <option value='UserService'>UserService</option>
+          - <option value='CounterService'>CounterService</option>
+        value: CounterService
+      dropdownAction:
+        value: GetCounter
+        html:
+          - <option value='' selected>Select</option>
+          - <option value='GetCounter'>GetCounter</option>
+          - <option value='GenerateRandomString'>GenerateRandomString</option>
+      response:
+        value: model.Code
+        dataType: string
+  - type: standard.Link
+    source:
+      id: 8bdf7b7a-7c4d-47a6-8c72-169941b09e6a
+    target:
+      id: c7f20a0f-5c99-4a2a-880f-6e4540257b0a
+    id: 5f603a49-9fe4-416a-b674-64d879f14009
+    z: 16
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: standard.Link
+    source:
+      id: c7f20a0f-5c99-4a2a-880f-6e4540257b0a
+    target:
+      id: 86219b1a-10de-46de-b910-8b00d73db871
+    id: 22291c32-7770-476d-a4f6-cf5e3e07e78c
+    z: 17
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: app.ErrorLogShape
+    title: ErrorLogShape
+    columns: []
+    padding:
+      top: 40
+      bottom: 10
+      left: 10
+      right: 10
+    size:
+      width: 250
+      height: 1
+    itemMinLabelWidth: 80
+    itemHeight: 25
+    itemOffset: 0
+    itemOverflow: true
+    position:
+      x: 529
+      y: 1054
+    angle: 0
+    id: 9bd7f877-986b-42d7-ba88-e287c7395650
+    z: 18
+    attrs:
+      headerLabel:
+        text: Set error
+      textAreaInput:
+        value: Duplicate author Name
+  - type: standard.Link
+    source:
+      id: b20d4ea7-42cc-4abb-a46f-eddf1b8bb570
+    target:
+      id: 9bd7f877-986b-42d7-ba88-e287c7395650
+    id: fe39ffc5-2181-4d68-9a33-d685b12ceb2a
+    z: 19
+    attrs:
+      line:
+        stroke: "#A0A0A0"
+  - type: standard.Link
+    source:
+      id: 9bd7f877-986b-42d7-ba88-e287c7395650
+    target:
+      id: 8513df80-2d5c-4931-aa1c-783def30be73
+    id: 2425ec3f-ad85-41ba-944e-5abe7bb497e4
+    z: 20
     attrs:
       line:
         stroke: "#A0A0A0"
